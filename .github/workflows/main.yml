@@ -27,4 +27,4 @@ jobs:
         assignees: ''
         labels: '${{ github.event.inputs.labels }}'
         title: '${{ github.event.inputs.title }}'
-        body: '${{ github.event.inputs.labels }}'
+        body: '${{ github.event.inputs.body }}'
