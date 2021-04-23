@@ -1,0 +1,30 @@
+name: Google Forms Issue Tracker
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: 'Title of the issue to post'
+        required: true
+        default: '[No title passed]'
+      body:
+        description: 'Body of the post'
+        required: true
+        default: '[No body passed]'
+      labels:
+        description: 'List of labels to be assigned to this post'
+        required: false
+        default: ''
+
+jobs:
+  post_issue:
+    name: Post Issue
+    runs-on: ubuntu-latest
+    steps:
+    # Generates and pins new standup issue, closes previous, writes linking comments, and assigns to all assignees in list
+    - name: New issue
+      uses: imjohnbo/issue-bot@v3
+      with:
+        assignees: ''
+        labels: '{{ github.event.inputs.labels }}'
+        title: '{{ github.event.inputs.title }}'
+        body: '{{ github.event.inputs.labels }}'
