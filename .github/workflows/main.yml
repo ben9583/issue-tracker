@@ -25,6 +25,6 @@ jobs:
       uses: imjohnbo/issue-bot@v3
       with:
         assignees: ''
-        labels: '{{ github.event.inputs.labels }}'
-        title: '{{ github.event.inputs.title }}'
-        body: '{{ github.event.inputs.labels }}'
+        labels: '${{ github.event.inputs.labels }}'
+        title: '${{ github.event.inputs.title }}'
+        body: '${{ github.event.inputs.labels }}'
